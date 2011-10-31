@@ -31,7 +31,7 @@
 				}
 				var inst = tinyMCE.selectedInstance;
 				inst.contentWindow.focus();
-				
+
 				var elm = inst.selection.getNode();
 				elm = inst.dom.getParent(elm, "A");
 				inst.execCommand('mceBeginUndoLevel');

@@ -34,7 +34,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 /img/icon-<?php echo $this->_tpl_vars['job']['type_var_name']; ?>
 .png" alt="<?php echo $this->_tpl_vars['job']['type_name']; ?>
 " /> <?php echo $this->_tpl_vars['job']['title']; ?>
- 
+
 				</h2>
 				<p>
 					<span class="fading">at</span>
@@ -82,7 +82,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 						<?php endif; ?>
 					</div>
 					<?php endif; ?>
-			
+
 					<div id="apply-online" <?php if ($_SESSION['apply_successful'] && $_SESSION['apply_successful'] == -1): ?>style="display: block;"<?php else: ?>style="display: none;"<?php endif; ?>>
 						<form id="frm-apply-online" method="post" enctype="multipart/form-data" action="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 apply-online/">
@@ -95,7 +95,7 @@ apply-online/">
 " />
 										<span class="validation-error"><?php if ($_SESSION['apply_errors']['apply_name']): ?><img src="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 _templates/<?php echo $this->_tpl_vars['THEME']; ?>
-/img/icon-delete.png" alt="" /><?php endif; ?></span>	
+/img/icon-delete.png" alt="" /><?php endif; ?></span>
 									</td>
 								</tr>
 								<tr>
@@ -106,7 +106,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 " />
 										<span class="validation-error"><?php if ($_SESSION['apply_errors']['apply_email']): ?><img src="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 _templates/<?php echo $this->_tpl_vars['THEME']; ?>
-/img/icon-delete.png" alt="" /><?php endif; ?></span>	
+/img/icon-delete.png" alt="" /><?php endif; ?></span>
 									</td>
 								</tr>
 								<tr>
@@ -117,7 +117,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 </textarea>
 										<span class="validation-error"><?php if ($_SESSION['apply_errors']['apply_msg']): ?><img src="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 _templates/<?php echo $this->_tpl_vars['THEME']; ?>
-/img/icon-delete.png" alt="" /><?php endif; ?></span>	
+/img/icon-delete.png" alt="" /><?php endif; ?></span>
 									</td>
 								</tr>
 								<tr>
@@ -128,7 +128,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 										<span class="validation-error"><?php if ($_SESSION['apply_errors']['apply_cv']): ?><img src="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 /img/icon-delete.png" alt="" title="<?php echo $_SESSION['apply_errors']['apply_cv']; ?>
-" /><?php endif; ?></span>	
+" /><?php endif; ?></span>
 										<div class="suggestion"><?php echo $this->_tpl_vars['translations']['apply']['cv_info']; ?>
 </div>
 									</td>
@@ -179,7 +179,7 @@ unset($_smarty_tpl_vars);
 			</div><!-- #job-details -->
 <?php echo '
 	<script type="text/javascript">
-	$(document).ready(function() { 
+	$(document).ready(function() {
 '; ?>
 
 <?php if ($_SESSION['apply_successful'] && $_SESSION['apply_successful'] == -1): ?>
@@ -187,7 +187,7 @@ unset($_smarty_tpl_vars);
 		if (document.getElementById("apply_name"))
 		{
 			window.location.href = "#apply";
-			document.getElementById("apply_name").focus();	
+			document.getElementById("apply_name").focus();
 		}
 	'; ?>
 
@@ -219,6 +219,6 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 /<?php echo 'img/icon-delete.png" alt="" />\'
 		}
 	});
-	}); 
+	});
 	</script>
 '; ?>

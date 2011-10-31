@@ -1,5 +1,5 @@
 			<div id="job-details">
-				
+
 				{if $job.days_old > 40}
 				<div id="old-ad">
 					This job ad has been posted over 40 days ago...
@@ -16,7 +16,7 @@
 				</div>
 				{/if}
 				<h2>
-					<img src="{$BASE_URL_ADMIN}img/icon-{$job.type_var_name}.png" alt="{$job.type_name}" /> {$job.title} 
+					<img src="{$BASE_URL_ADMIN}img/icon-{$job.type_var_name}.png" alt="{$job.type_name}" /> {$job.title}
 				</h2>
 				<p>
 					<span class="fading">at</span>
@@ -34,5 +34,5 @@
 				<div id="job-description">
 				{$job.description|highlight_keywords:$smarty.session.keywords_array}
 				</div><br />
-				
+
 			</div><!-- #job-details -->

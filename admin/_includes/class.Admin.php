@@ -4,9 +4,9 @@
  	private $userId;
  	private $username;
  	private $email;
- 	
+
  	public function __construct(){}
- 	
+
  	public function login($username, $password)
  	{
  		global $db;
@@ -16,12 +16,12 @@
 		$row = $result->fetch_assoc();
 		if (!empty($row))
 		{
-			$this->userId = $row['id']; 
+			$this->userId = $row['id'];
 			return true;
 		}
 		return false;
  	}
- 	
+
  	public function getId()
  	{
  		return $this->userId;

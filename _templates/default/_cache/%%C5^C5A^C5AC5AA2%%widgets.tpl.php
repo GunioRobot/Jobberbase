@@ -23,7 +23,7 @@ unset($_smarty_tpl_vars);
 					<li><strong>days_behind</strong>: get only jobs posted in the past X days (type "0" if you don't want to limit this)</li>
 					<li><strong>response</strong>: "js" - returns jobs as JavaScript code / "json" - returns only a JSON string / "xml" - returns an XML</li>
 				</ul>
-				<br /><strong>Some sample codes using this</strong>: 
+				<br /><strong>Some sample codes using this</strong>:
 				<ul>
 					<li>The following code displays last 5 jobs posted in the past 10 days in administrator category as fulltime and ordered by publishing date(newest on top):
 					<pre>&lt;script src="<?php echo $this->_tpl_vars['BASE_URL']; ?>
@@ -36,14 +36,14 @@ api/api.php?action=getJobs<br />&amp;type=0&amp;category=0&amp;count=5&amp;rando
 				</ul>
 				</li>
 				<br />
-				<li><strong>Get Jobs by Company Widget</strong>: This widget is used to retrive jobs based on their company and their count. 
+				<li><strong>Get Jobs by Company Widget</strong>: This widget is used to retrive jobs based on their company and their count.
 				<br /><br /><strong>List of parameters to be used in this implementation:</strong>
 				<ul>
 					<li><strong>action</strong>: "getJobsByCompany" - a single company's jobs</li>
 					<li><strong>count</strong>: number of job ads to display</li>
 					<li><strong>response</strong>: "js" - returns jobs as JavaScript code / "json" - returns only a JSON string / "xml" - returns an XML</li>
-				</ul>	
-				<br /><strong>A code for this get latest 10 jobs published by Google:</strong> 
+				</ul>
+				<br /><strong>A code for this get latest 10 jobs published by Google:</strong>
 				<pre>&lt;script src="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 api/api.php?action=getJobsByCompany<br />&amp;company=google&amp;count=10&amp;response=js" type="text/javascript"&gt;&lt;/script&gt;<br /><br />&lt;script type="text/javascript"&gt;showJobs('jobber-container', 'jobber-list');&lt;/script&gt;</pre>
 				</li>
@@ -52,7 +52,7 @@ api/api.php?action=getJobsByCompany<br />&amp;company=google&amp;count=10&amp;re
 			<h3><strong>CSS Styling</strong></h3>
 			You can use some custom css to style the display the job list. Here is a sample code:
 			<pre>ul.jobber-list &#123;<br />  list-style-type: none;<br />  margin: 0;<br />  padding: 0;<br />&#125;<br />ul.jobber-list li &#123;<br />  margin-bottom: 5px;<br />&#125;</pre>
-			<br /><strong>Note:</strong> 
+			<br /><strong>Note:</strong>
 			<ul>
 			<li>You can notice that there are two script codes for each implementation, the script which points to the api.php class can be included anywhere in your site but the second code should appear at the place where you want to display the jobs.</li>
 			<li>There is a live demo script using the api code. <a href="<?php echo $this->_tpl_vars['BASE_URL']; ?>

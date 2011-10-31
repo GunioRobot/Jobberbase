@@ -128,7 +128,7 @@ $this->_sections['tmp']['last']       = ($this->_sections['tmp']['iteration'] ==
 	<?php echo '
 	<script type="text/javascript">
 		//<![CDATA[
-		
+
  		$(document).ready(function()
 		{
 		   var keywords = $(\'#keywords\');
@@ -142,7 +142,7 @@ $this->_sections['tmp']['last']       = ($this->_sections['tmp']['iteration'] ==
 				}
 			});
 
-			keywords.bind(\'blur\', function() {  
+			keywords.bind(\'blur\', function() {
 				if (this.value == \''; ?>
 <?php echo $this->_tpl_vars['translations']['search']['default']; ?>
 <?php echo '\' || this.value == \'\')
@@ -157,11 +157,11 @@ $this->_sections['tmp']['last']       = ($this->_sections['tmp']['iteration'] ==
 			keywords.keyup(function(key) {
 				var searchKeywords = jQuery.trim(this.value);
 				var len = searchKeywords.length;
-				
+
 			    if (key.keyCode != 9 && len >= 3)
 				{
-					$("#indicator").show();	
-					clearTimeout(window.search_timer);	
+					$("#indicator").show();
+					clearTimeout(window.search_timer);
 					window.search_timer = setTimeout(function(){Jobber.PerformSearch(\''; ?>
 <?php echo $this->_tpl_vars['BASE_URL']; ?>
 <?php echo 'search/'; ?>
@@ -177,7 +177,7 @@ $this->_sections['tmp']['last']       = ($this->_sections['tmp']['iteration'] ==
 	</script>
 	'; ?>
 
-	<?php 
+	<?php
 	  if (isset($_SESSION['status']))
 		{
 			unset($_SESSION['status']);

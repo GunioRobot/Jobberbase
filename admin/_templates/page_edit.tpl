@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-		
+
 				<div id="sidebar">
 					<div class="sidebar_page_edit">
 						<h3>Links</h3>

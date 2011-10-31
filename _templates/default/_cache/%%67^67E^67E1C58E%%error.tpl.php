@@ -17,7 +17,7 @@ unset($_smarty_tpl_vars);
 post/" title="<?php echo $this->_tpl_vars['translations']['footer']['new_job_title']; ?>
 "><?php echo $this->_tpl_vars['translations']['footer']['new_job']; ?>
 </a>	&middot;
-					<?php endif; ?> 
+					<?php endif; ?>
 					<a href="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 "><?php echo $this->_tpl_vars['translations']['notfound']['back']; ?>
 </a>

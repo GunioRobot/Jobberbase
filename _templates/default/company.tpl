@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-		
+
 		<div id="content">
 			<div id="job-listings">
 				<h2>

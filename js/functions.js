@@ -1,15 +1,15 @@
-(function() 
+(function()
 {
 	Jobber = {
-		
+
 		jobber_url: "",
-		
+
 		FixPng: function()
 		{
 			var arVersion = navigator.appVersion.split("MSIE");
 			var version = parseFloat(arVersion[1]);
 
-			if ((version >= 5.5) && (document.body.filters)) 
+			if ((version >= 5.5) && (document.body.filters))
 			{
 			   for(var i=0; i<document.images.length; i++)
 			   {
@@ -36,14 +36,14 @@
 			}
 
 		},
-		
+
 		PerformSearch: function(url, keywords)
 		{
-			clearTimeout(window.search_timer);	
-			$('#job-listings').load(url + encodeURIComponent(keywords) + '/');	
-			$("#indicator").hide();	
+			clearTimeout(window.search_timer);
+			$('#job-listings').load(url + encodeURIComponent(keywords) + '/');
+			$("#indicator").hide();
 		},
-		
+
 		HandleLocationOutsideRo: function()
 		{
 			if (document.getElementById("location_outside_ro").style.display == "none")
@@ -60,7 +60,7 @@
 				$("a#other_location_label").html(Jobber.I18n.js.location_other);
 			}
 		},
-		
+
 		SendToFriend: {
 			showHide: function()
 			{
@@ -69,7 +69,7 @@
 
 			sendMsg: function()
 			{
-				$("#frm-send-to-friend").ajaxForm(function(responseText) { 
+				$("#frm-send-to-friend").ajaxForm(function(responseText) {
 					if (responseText == "0")
 					{
 						var msg = Jobber.I18n.js.send_to_friend_unsuccessful;
@@ -85,7 +85,7 @@
 				});
 			}
 		},
-		
+
 		ReportSpam: function(url, job_id)
 		{
 			$.ajax({

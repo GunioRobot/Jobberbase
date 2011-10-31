@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-		
+
 		<div id="content">
 			<h3 class="page-heading"><a href="{$BASE_URL}" title="{$translations.header.title}">&laquo; {$translations.header.home}</a> / {$translations.rss.title}</h3>
 			<p>

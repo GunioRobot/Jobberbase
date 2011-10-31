@@ -17,7 +17,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 		<?php endif; ?>
-		
+
 		<div id="content">
 			<div id="job-listings"></div><!-- #job-listings -->
 			<br />
@@ -236,7 +236,7 @@ img/icon-delete.png" alt="" /></span><?php endif; ?>
 						</tr>
 					</table>
 				</fieldset>
-				
+
 				<fieldset>
 					<legend><?php echo $this->_tpl_vars['translations']['publish']['company']; ?>
 </legend>
@@ -250,7 +250,7 @@ img/icon-delete.png" alt="" /></span><?php endif; ?>
 							<span class="validation-error"><?php if ($this->_tpl_vars['errors']['company']): ?><img src="<?php echo $this->_tpl_vars['BASE_URL_ADMIN']; ?>
 img/icon-delete.png" alt="" /><?php endif; ?></span>
 							</td>
-						</tr> 
+						</tr>
 						<tr>
 							<td valign="top"><?php echo $this->_tpl_vars['translations']['publish']['website_label']; ?>
 :</td>
@@ -292,13 +292,13 @@ img/icon-delete.png" alt="" /><?php endif; ?></span>
 				</fieldset>
 			</form>
 		</div><!-- /content -->
-		
+
 		<?php echo '
 		<script type="text/javascript">
 			$(document).ready(function()
 			{
 				$(\'#title\').focus();
-				
+
 				$("#publish_form").validate({
 					rules: {
 						company: { required: true },
@@ -324,12 +324,12 @@ img/icon-delete.png" alt="" /><?php endif; ?></span>
 <?php echo 'img/icon-delete.png" alt="" />\'
 					}
 				});
-				
+
 				$(\'#save\').bind(\'click\', function()
 				{
 					$("#publish_form").submit();
 				});
-				
+
 				$(\'#preview\').bind(\'click\', function()
 				{
 					$(\'#show_preview\').val(\'true\');

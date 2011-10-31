@@ -6,7 +6,7 @@
  * @optimized by       Mihai Mocanu <mihai.mocanu@gmail.com>
  * @license    You are free to edit and use this work, but it would be nice if you always referenced the original author ;)
  *             (see license.txt).
- * 
+ *
  * Paginator class handles pagination issues
  */
 
@@ -27,7 +27,7 @@ class Paginator
     $this->items_per_page = $items_per_page;
     $this->current_page = $current_page;
   }
-  
+
   function getFirstLimit()
   {
   	return $this->firstLimit;
@@ -55,7 +55,7 @@ class Paginator
   function paginate()
   {
     $total_items = $this->itemsCount;
-    
+
     if( $this->items_per_page == "" || $this->items_per_page == "0" || $this->items_per_page == 0 )
     {
       $this->items_per_page = 10;
@@ -76,7 +76,7 @@ class Paginator
     {
     	$total_pages = intval($total_items / $this->items_per_page) + 1;
     }
-    
+
     if( $page > $total_pages )
     {
     	$page = 1;
@@ -95,7 +95,7 @@ class Paginator
 	    $this->firstLimit = $this->items_per_page * ($page-1);
 	    $this->lastLimit =  $this->items_per_page * $page;
     }
-    
+
 	if ($total_pages != 1)
 	{
 	    if($total_pages>0)
@@ -109,34 +109,34 @@ class Paginator
 	    		$pages = "&nbsp;<a href='".$this->link."?p=".($page-1)."'>&laquo;</a>&nbsp;";
 	    	}
 	    }
-	    
+
         $numberOfPages = 7;
         $beginPages = array(1, 2, 3);
         $endPages = array($total_pages, $total_pages - 1, $total_pages - 2, $total_pages - 3);
-        
-        if ($total_pages > $numberOfPages) 
+
+        if ($total_pages > $numberOfPages)
         {
-            if (in_array($page, $beginPages)) 
+            if (in_array($page, $beginPages))
             {
                 $beginI = 1; $endI = $numberOfPages;
-            } 
-            elseif (in_array($page, $endPages)) 
+            }
+            elseif (in_array($page, $endPages))
             {
                 $beginI = $total_pages - ($numberOfPages - 1);
                 $endI = $total_pages;
-            } 
-            else 
+            }
+            else
             {
                 $beginI = $page - 3;
                 $endI = $page + 3;
             }
-        } 
-        else 
+        }
+        else
         {
             $beginI = 1;
             $endI = $total_pages;
         }
-        
+
 	    for($i=$beginI;$i<=$endI;$i++)
 	    {
 	    	if($i==$page)
@@ -148,7 +148,7 @@ class Paginator
 	    		$pages .= "&nbsp;<a href='".$this->link."?p=$i'>$i</a>&nbsp;";
 	    	}
 	    }
-	    
+
 	    if($total_pages>0)
 	    {
 	    	if( $page == $total_pages )
@@ -165,7 +165,7 @@ class Paginator
 	{
 		$pages = '';
 	}
-	
+
     $this->pages_link = $pages;
   }
 }

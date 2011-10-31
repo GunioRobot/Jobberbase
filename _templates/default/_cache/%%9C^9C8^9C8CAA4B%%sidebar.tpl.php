@@ -45,7 +45,7 @@ $this->_sections['tmp']['last']       = ($this->_sections['tmp']['iteration'] ==
 				<?php endfor; endif; ?>
 			<?php endif; ?>
 			</ul>
-			
+
 			<?php if ($_SESSION['last_viewed_jobs']): ?>
 			<h4><?php echo $this->_tpl_vars['translations']['header']['seen_recently']; ?>
 </h4>
@@ -80,7 +80,7 @@ $this->_sections['last']['last']       = ($this->_sections['last']['iteration'] 
 				<?php endfor; endif; ?>
 			</ul>
 			<?php endif; ?>
-			
+
 			<?php if ($this->_tpl_vars['CURRENT_PAGE'] == ''): ?>
 			<br />
 			<div id="stats">

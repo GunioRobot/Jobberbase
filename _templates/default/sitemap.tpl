@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-		
+
 		<div id="content">
 			<div id="job-listings"></div><!-- #job-listings -->
 			<h3 class="page-heading">{$translations.sitemap.title}</h3>

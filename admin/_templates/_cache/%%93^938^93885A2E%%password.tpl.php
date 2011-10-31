@@ -7,7 +7,7 @@ unset($_smarty_tpl_vars);
  ?>
 		<div id="content">
 				<h3 class="page-heading">Change your password</h3>
-				
+
 				<form id="publish_form" action="<?php echo $_SERVER['REQUEST_URI']; ?>
 " method="post">
 					<fieldset>

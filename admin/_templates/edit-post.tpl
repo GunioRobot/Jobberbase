@@ -5,7 +5,7 @@
 		{if $show_preview}
 			{include file="edit-post-preview.tpl"}
 		{/if}
-		
+
 		<div id="content">
 			<div id="job-listings"></div><!-- #job-listings -->
 			<br />
@@ -122,7 +122,7 @@
 						</tr>
 					</table>
 				</fieldset>
-				
+
 				<fieldset>
 					<legend>{$translations.publish.company}</legend>
 					<table border="0" cellspacing="2" cellpadding="2">
@@ -131,7 +131,7 @@
 							<td><input {if $errors.company}class="error"{/if} tabindex="6" type="text" name="company" id="company" size="40" value="{if $job.company}{$job.company|escape}{else}{$smarty.post.company|escape}{/if}" />
 							<span class="validation-error">{if $errors.company}<img src="{$BASE_URL_ADMIN}img/icon-delete.png" alt="" />{/if}</span>
 							</td>
-						</tr> 
+						</tr>
 						<tr>
 							<td valign="top">{$translations.publish.website_label}:</td>
 							<td>http://<input tabindex="7" type="text" name="url" id="url" size="35" value="{if $job.company}{$job.url}{else}{$smarty.post.url}{/if}" />
@@ -161,13 +161,13 @@
 				</fieldset>
 			</form>
 		</div><!-- /content -->
-		
+
 		{literal}
 		<script type="text/javascript">
 			$(document).ready(function()
 			{
 				$('#title').focus();
-				
+
 				$("#publish_form").validate({
 					rules: {
 						company: { required: true },
@@ -183,12 +183,12 @@
 						poster_email: ' <img src="{/literal}{$BASE_URL_ADMIN}{literal}img/icon-delete.png" alt="" />'
 					}
 				});
-				
+
 				$('#save').bind('click', function()
 				{
 					$("#publish_form").submit();
 				});
-				
+
 				$('#preview').bind('click', function()
 				{
 					$('#show_preview').val('true');

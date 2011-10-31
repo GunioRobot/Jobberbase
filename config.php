@@ -6,13 +6,13 @@
  * @license    You are free to edit and use this work, but it would be nice if you always referenced the original author ;)
  *             (see license.txt).
  */
-  
+
 	header('Content-Type: text/html; charset=UTF-8');
   	ini_set('display_errors', 'on');
 	error_reporting(E_ALL ^ E_STRICT);
-	
+
 	date_default_timezone_set('Europe/Bucharest');
-	
+
 	define('JOBBERBASE_VERSION', '1.8');
 
 	// MySQL + misc settings for local environment
@@ -42,35 +42,35 @@
 
 	define('APP_PATH',dirname(__FILE__).DIRECTORY_SEPARATOR);
 
-  if(isset($_SERVER['SCRIPT_NAME'])) 
+  if(isset($_SERVER['SCRIPT_NAME']))
 	{
 		# on Windows _APP_MAIN_DIR becomes \ and abs url would look something like HTTP_HOST\/restOfUrl, so \ should be trimed too
 		# @modified Chis Florinel <chis.florinel@candoo.ro>
-		
-		$app_main_dir = rtrim(dirname($_SERVER['SCRIPT_NAME']),'/\\');	
+
+		$app_main_dir = rtrim(dirname($_SERVER['SCRIPT_NAME']),'/\\');
 		define('_APP_MAIN_DIR', $app_main_dir);
-  } 
-	else 
+  }
+	else
 	{
 		die('[config.php] Cannot determine APP_MAIN_DIR, please set manual and comment this line');
   }
 
-  if(isset($_SERVER['HTTP_HOST']) && isset($_SERVER['SERVER_PORT'])) 
+  if(isset($_SERVER['HTTP_HOST']) && isset($_SERVER['SERVER_PORT']))
 	{
-  	if($_SERVER['SERVER_PORT'] == 80) 
+  	if($_SERVER['SERVER_PORT'] == 80)
     {
       define ('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'] . _APP_MAIN_DIR . '/');
-    } 
-    else 
+    }
+    else
     {
       define ('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'].':'.$_SERVER['SERVER_PORT'] . _APP_MAIN_DIR . '/');
     }
-  } 
-  else 
+  }
+  else
   {
     die('[config.php] Cannot determine BASE_URL, please set manual and comment this line');
   }
-	
+
 	// Function and classes includes
 	require_once '_includes/function.validate_email.php';
 	require_once '_includes/function.redirect_to.php';
@@ -97,24 +97,24 @@
 	require_once '_includes/smarty/libs/Smarty.class.php';
 
 	// Setup database connection
-	try 
+	try
 	{
 		$db = new Db(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 		$db->Execute('SET NAMES UTF8');
 	}
-	catch(ConnectException $exception) 
+	catch(ConnectException $exception)
 	{
 		if (ENVIRONMENT == 'dev')
 		{
 			echo "Database Connection Error:<br />";
-			printr($exception->getMessage());	
+			printr($exception->getMessage());
 		}
 	}
-	
+
 	// Load the Site-Specific Settings
 	$jobber_settings = new JobberSettings();
 	$settings = $jobber_settings->GetSettings();
-	
+
 	// Global settings definitions
 	define('SITE_NAME', $settings['site_name']);
 	define('THEME', $settings['theme']);
@@ -142,28 +142,28 @@
 	define('ENABLE_RECAPTCHA', $settings['enable_recaptcha']);
 	define('CAPTCHA_PUBLIC_KEY', $settings['captcha_public_key']);
 	define('CAPTCHA_PRIVATE_KEY', $settings['captcha_private_key']);
-	
+
 	// Setup Smarty
 	$smarty = new Smarty();
 	$smarty->template_dir = APP_PATH . '_templates/' . THEME . '/';
 	$smarty->compile_dir = APP_PATH . '_templates/' . THEME . '/_cache/';
-	
+
 	// Create Textile object
 	$textile = new Textile;
-	
+
 	// Split URL - get parameters
 	$_app_info['params'] = array();
-	
+
 	// if your server is IIS, use these lines and comment lines 135-137:
 	//$_url = $_SERVER["QUERY_STRING"];
 
-	// if server is Apache:	
+	// if server is Apache:
 	$newUrl = str_replace('/', '\/', _APP_MAIN_DIR);
-    $pattern = '/'.$newUrl.'/';   
+    $pattern = '/'.$newUrl.'/';
     $_url = preg_replace($pattern, '', $_SERVER['REQUEST_URI'], 1);
 	$_tmp = explode('?', $_url);
-	$_url = $_tmp[0];	
-	
+	$_url = $_tmp[0];
+
 	if ($_url = explode('/', $_url))
 	{
 		foreach ($_url as $tag)

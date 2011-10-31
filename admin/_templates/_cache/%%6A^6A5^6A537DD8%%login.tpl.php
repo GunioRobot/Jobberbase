@@ -35,15 +35,15 @@ img/icon-delete.png" alt="" /><?php endif; ?></span></td>
 			src="<?php echo $this->_tpl_vars['BASE_URL_ADMIN']; ?>
 img/icon-delete.png" alt="" /><?php endif; ?></span></td>
 	</tr>
-	
-	
+
+
 </table>
 </fieldset>
 <fieldset><input type="submit" name="submit" id="submit"
 	value="Login" /></fieldset>
 	<fieldset class="hidden">
 		<input type="hidden" name="action" value="login" />
-		
+
 	</fieldset>
 </form>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;

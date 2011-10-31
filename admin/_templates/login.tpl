@@ -23,15 +23,15 @@
 		<span class="validation-error">{if $errors.password}<img
 			src="{$BASE_URL_ADMIN}img/icon-delete.png" alt="" />{/if}</span></td>
 	</tr>
-	
-	
+
+
 </table>
 </fieldset>
 <fieldset><input type="submit" name="submit" id="submit"
 	value="Login" /></fieldset>
 	<fieldset class="hidden">
 		<input type="hidden" name="action" value="login" />
-		
+
 	</fieldset>
 </form>
 {include file="footer.tpl"}

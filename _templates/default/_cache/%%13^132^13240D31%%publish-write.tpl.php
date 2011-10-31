@@ -7,7 +7,7 @@ $this->_smarty_include(array('smarty_include_tpl_file' => "header.tpl", 'smarty_
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-		
+
 		<div id="content">
 			<div id="job-listings"></div><!-- #job-listings -->
 			<div class="steps">
@@ -262,7 +262,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 /img/icon-delete.png" alt="" /><?php endif; ?></span>
 							</td>
-						</tr> 
+						</tr>
 						<tr>
 							<td valign="top"><?php echo $this->_tpl_vars['translations']['publish']['website_label']; ?>
 :</td>
@@ -317,7 +317,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 </input></fieldset>
 				<fieldset><input type="submit" name="submit" id="submit" value="<?php echo $this->_tpl_vars['translations']['publish']['step1_submit']; ?>
 " /></fieldset>
-				<fieldset class="hidden">					
+				<fieldset class="hidden">
 					<input type="hidden" name="action" <?php if ($this->_tpl_vars['job']['id'] || $_SESSION['later_edit']): ?>value="edit"<?php else: ?>value="publish"<?php endif; ?> />
 					<?php if ($_SESSION['later_edit']): ?><input type="hidden" name="auth" value="<?php echo $_SESSION['later_edit']; ?>
 " /><?php endif; ?>
@@ -326,13 +326,13 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 				</fieldset>
 			</form>
 		</div><!-- /content -->
-		
+
 		<?php echo '
 		<script type="text/javascript">
 			$(document).ready(function()
 			{
 				$(\'#title\').focus();
-				
+
 				$("#publish_form").validate({
 					rules: {
 						company: { required: true },

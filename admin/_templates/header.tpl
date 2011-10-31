@@ -60,7 +60,7 @@
 			</ul>
 			{/if}
 		</div><!-- #header -->
-		
+
     <div id="categs-nav">
     	{if $isAuthenticated == 1}
      		 <ul>

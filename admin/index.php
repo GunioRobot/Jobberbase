@@ -13,7 +13,7 @@
 	   die('[index.php] config.php not found, please rename config.default.php to config.php');
 	}
 	require_once 'config.php';
-	
+
 	$page = (isset($_app_info['params'][0]) ? $db->real_escape_string($_app_info['params'][0]) : '');
 	$id = (isset($_app_info['params'][1]) ? $db->real_escape_string($_app_info['params'][1]) : 0);
 	$extra = (isset($_app_info['params'][2]) ? $db->real_escape_string($_app_info['params'][2]) : '');
@@ -23,27 +23,27 @@
 	} else {
 		trigger_error('Unable to find the translations file!');
 	}
-	
+
 	$flag = 0;
 	$js = array();
 	if(!isset($_SERVER['HTTP_REFERER'])) {
 	   $_SERVER['HTTP_REFERER'] = '';
 	}
-	
+
 	$job = new Job();
-	
+
 	switch($page)
 	{
-		// home		
+		// home
 		case '':
 			#show login page only if the admin is not logged in
 			#else show homepage
 			if(!isset($_SESSION['AdminId']))
 			{
-				require_once 'page_login.php';			
+				require_once 'page_login.php';
 			}
 			else
-			{				
+			{
 				require_once 'page_home.php';
 			}
 			$flag = 1;
@@ -52,13 +52,13 @@
 		case 'logout':
 			$flag = 1;
 			if (isset($_SESSION['AdminId']))
-			{			
+			{
 				unset($_SESSION['AdminId']);
 				redirect_to(BASE_URL);
 				exit;
 			}
 			break;
-			
+
 		case 'home':
 			if(!isset($_SESSION['AdminId']))
 			{
@@ -104,7 +104,7 @@
 			{
 				redirect_to(BASE_URL);
 				exit;
-			}			
+			}
 			require_once 'page_job.php';
 			$flag = 1;
 			break;
@@ -229,14 +229,14 @@
                 redirect_to(BASE_URL);
                 exit;
             }
-            
+
    			require_once 'page_cities.php';
    			$flag = 1;
    			$citiesPage = new CitiesPage();
    			$template = $citiesPage->processRequest($id, $extra, $smarty);
    			break;
-		default: 
-			$flag = 0;	
+		default:
+			$flag = 0;
 			break;
 	}
 	// if page not found
@@ -244,10 +244,10 @@
 	{
 		redirect_to(BASE_URL . 'page-unavailable/');
 	}
-	
+
 	// create a JSON string from the translations array, but only for the "js" section
 	$smarty->assign('translationsJson', iniSectionsToJSON(array("js" => $translations['js'])));
-	
+
 	// get job categories and cities
 	$smarty->assign('categories', get_categories());
 
@@ -258,7 +258,7 @@
 	$smarty->assign('URL_COMPANIES', URL_COMPANIES);
 	$smarty->assign('URL_JOBS_IN_CITY', URL_JOBS_IN_CITY);
 	$smarty->assign('URL_JOBS_AT_COMPANY', URL_JOBS_AT_COMPANY);
-	
+
 	$smarty->assign('CURRENT_PAGE', $page);
 	$smarty->assign('CURRENT_ID', $id);
 	$smarty->assign('CURRENT_DIRECTORY', CURRENT_DIRECTORY);

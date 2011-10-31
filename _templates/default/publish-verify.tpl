@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-		
+
 		<div id="content">
 			<div id="job-listings"></div><!-- #job-listings -->
 			<div class="steps">
@@ -14,9 +14,9 @@
 				</div>
 				<div class="clear"></div>
 			</div>
-			
+
 			{include file="job-details.tpl"}
-			
+
 			<form name="publish_form" id="publish_form" method="post" action="{$BASE_URL}publish/{$job.id}/">
 				<fieldset>
 					<div class="right">

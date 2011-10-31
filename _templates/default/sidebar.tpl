@@ -12,7 +12,7 @@
 				{/section}
 			{/if}
 			</ul>
-			
+
 			{if $smarty.session.last_viewed_jobs}
 			<h4>{$translations.header.seen_recently}</h4>
 			<ul>
@@ -21,7 +21,7 @@
 				{/section}
 			</ul>
 			{/if}
-			
+
 			{if $CURRENT_PAGE == ''}
 			<br />
 			<div id="stats">

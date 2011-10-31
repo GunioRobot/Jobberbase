@@ -9,9 +9,9 @@
  */
 
 	require_once '../config.php';
-	
+
 	$currentDirectoryNames = explode('/', dirname($_SERVER['PHP_SELF']));
-	
+
 	define('CURRENT_DIRECTORY', end($currentDirectoryNames));
 	$smarty->template_dir = APP_PATH . CURRENT_DIRECTORY. '/_templates/';
 	$smarty->compile_dir = APP_PATH . CURRENT_DIRECTORY. '/_templates/_cache/';

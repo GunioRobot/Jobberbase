@@ -5,7 +5,7 @@ $this->_smarty_include(array('smarty_include_tpl_file' => "header.tpl", 'smarty_
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-		
+
 		<div id="content">
 			<div id="job-listings">
 				<h2>

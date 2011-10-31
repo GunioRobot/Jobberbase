@@ -9,11 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$smarty->assign('error', 'The new password and verification password do not match.');
 	} else {
 		$result = $db->query('
-			UPDATE 
-				'.DB_PREFIX.'admin 
-			SET 
-				password = md5(\'' . $db->real_escape_string($_POST['new_password']) . '\') 
-			WHERE 
+			UPDATE
+				'.DB_PREFIX.'admin
+			SET
+				password = md5(\'' . $db->real_escape_string($_POST['new_password']) . '\')
+			WHERE
 				id = 1
 		');
 		$smarty->assign('error', 'Your password has been changed!');

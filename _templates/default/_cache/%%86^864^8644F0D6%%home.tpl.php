@@ -96,7 +96,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 						</span>
 						<span class="time-posted"><strong><?php echo $this->_tpl_vars['job']['apps']; ?>
 </strong> <?php echo $this->_tpl_vars['translations']['homepage']['applicants']; ?>
-</span>			
+</span>
 					</div>
 				<?php endforeach; endif; unset($_from); ?>
 				<?php endif; ?>

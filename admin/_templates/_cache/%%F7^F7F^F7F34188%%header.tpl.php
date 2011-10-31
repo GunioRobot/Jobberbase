@@ -96,7 +96,7 @@ logout/">Logout &raquo;</a></li>
 			</ul>
 			<?php endif; ?>
 		</div><!-- #header -->
-		
+
     <div id="categs-nav">
     	<?php if ($this->_tpl_vars['isAuthenticated'] == 1): ?>
      		 <ul>

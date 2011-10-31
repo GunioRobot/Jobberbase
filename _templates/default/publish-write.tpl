@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-		
+
 		<div id="content">
 			<div id="job-listings"></div><!-- #job-listings -->
 			<div class="steps">
@@ -135,7 +135,7 @@
 							<td><input {if $errors.company}class="error"{/if} tabindex="6" type="text" name="company" id="company" size="40" value="{if $job.company}{$job.company|escape}{else}{$smarty.post.company|escape}{/if}" />
 							<span class="validation-error">{if $errors.company}<img src="{$BASE_URL}_templates/{$THEME}/img/icon-delete.png" alt="" />{/if}</span>
 							</td>
-						</tr> 
+						</tr>
 						<tr>
 							<td valign="top">{$translations.publish.website_label}:</td>
 							<td>http://<input tabindex="7" type="text" name="url" id="url" size="35" value="{if $job.company}{$job.url}{else}{$smarty.post.url}{/if}" />
@@ -171,20 +171,20 @@
 				{/if}
 				<fieldset><input type="checkbox" name="apply_online" id="apply_online" {if $job.apply_online == 1 || $is_apply == 1}checked="checked"{/if}{if !isset($job.apply_online) && !isset($is_apply)}checked="checked"{/if} />{$translations.publish.apply_online}</input></fieldset>
 				<fieldset><input type="submit" name="submit" id="submit" value="{$translations.publish.step1_submit}" /></fieldset>
-				<fieldset class="hidden">					
+				<fieldset class="hidden">
 					<input type="hidden" name="action" {if $job.id || $smarty.session.later_edit}value="edit"{else}value="publish"{/if} />
 					{if $smarty.session.later_edit}<input type="hidden" name="auth" value="{$smarty.session.later_edit}" />{/if}
 					{if $job.id}<input type="hidden" name="job_id" value="{$job.id}" />{/if}
 				</fieldset>
 			</form>
 		</div><!-- /content -->
-		
+
 		{literal}
 		<script type="text/javascript">
 			$(document).ready(function()
 			{
 				$('#title').focus();
-				
+
 				$("#publish_form").validate({
 					rules: {
 						company: { required: true },

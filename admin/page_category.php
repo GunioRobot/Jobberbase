@@ -1,7 +1,7 @@
 <?php
 	$type_id = get_type_id_by_varname($extra);
 	$city_id = false;
-	
+
 	if($type_id && $id != 'all')
 	{
 		if ($job->IsValidCategory($id))
@@ -15,7 +15,7 @@
 			exit;
 		}
 	}
-	
+
 	if (!$type_id && $id != 'all')
 	{
 		if ($job->IsValidCategory($id))
@@ -37,22 +37,22 @@
 	$paginator = new Paginator($jobCount, JOBS_PER_PAGE, @$_REQUEST['p']);
 	$paginator->setLink(BASE_URL . URL_JOBS . "/$id");
 	$paginator->paginate();
-	
+
 	$firstLimit = $paginator->getFirstLimit();
 	$lastLimit = $paginator->getLastLimit();
-	
+
 	$the_jobs = array();
 	$the_jobs = $job->GetJobsPaginate(0, $id, $firstLimit, JOBS_PER_PAGE, 0, 0, false, $city_id, $type_id);
-	
+
 	$statisticalData = array();
-	
+
 	if (count($the_jobs))
 	{
 		$jobIDs = array();
-		
+
 		foreach ($the_jobs as $index => $aJob)
 			$jobIDs[] = $aJob['id'];
-		
+
 		$statisticalData = $job->GetApplicationsStatistics($jobIDs);
 	}
 

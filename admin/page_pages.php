@@ -1,13 +1,13 @@
 <?php
 
 	$smarty->assign('current_category', 'pages');
-	
+
 	$result = $db->query('
-		SELECT 
-			url, title, page_title 
-		FROM 
-			'.DB_PREFIX.'pages 
-		ORDER BY 
+		SELECT
+			url, title, page_title
+		FROM
+			'.DB_PREFIX.'pages
+		ORDER BY
 			title ASC
 	');
 	$pages = array();
@@ -16,16 +16,16 @@
 		$pages[] = $row;
 	}
 	$smarty->assign('pages', $pages);
-	
+
 	$isPage = false;
 	if (key_exists(1,$_app_info['params'])) {
 		if (key_exists(2,$_app_info['params'])) {
 			$result = $db->query('
-				SELECT 
-					* 
-				FROM 
-					'.DB_PREFIX.'pages 
-				WHERE 
+				SELECT
+					*
+				FROM
+					'.DB_PREFIX.'pages
+				WHERE
 					url = \'' . $db->real_escape_string(strip_tags($_app_info['params'][2])) . '\'
 			');
 			$row = $result->fetch_assoc();
@@ -36,9 +36,9 @@
 		}
 		if ($_app_info['params'][1] == 'delete') {
 			$db->query('
-				DELETE FROM 
-					'.DB_PREFIX.'pages 
-				WHERE 
+				DELETE FROM
+					'.DB_PREFIX.'pages
+				WHERE
 					`id` = ' . $row['id'] . '
 			');
 			header('Location: ' . BASE_URL . 'pages/');
@@ -69,15 +69,15 @@
 				$errors['page_url'] = 'The URL must contain only alphanumerical characters, dashed and underscores';
 			} else {
 				$result = $db->query('
-					SELECT 
-						* 
-					FROM 
-						'.DB_PREFIX.'pages 
-					WHERE 
+					SELECT
+						*
+					FROM
+						'.DB_PREFIX.'pages
+					WHERE
 						url = \'' . $db->real_escape_string($url) . '\' ' .
 						( $isPage ? '
-						and 
-						id != ' . $row['id'] : '' 
+						and
+						id != ' . $row['id'] : ''
 						) . '
 				');
 				$isDuplicate = $result->fetch_assoc();
@@ -85,15 +85,15 @@
 					$errors['page_url'] = 'The URL is already in use. Please select another URL';
 				}
 			}
-			
+
 			if (empty($defaults['page_title'])) {
 				$errors['page_title'] = 'Please fill in the title';
 			}
-			
+
 			if (count($errors) == 0) {
 				$db->query('
 					REPLACE INTO
-						'.DB_PREFIX.'pages 
+						'.DB_PREFIX.'pages
 					VALUES
 						(
 							' . ($isPage ? $row['id'] : 'NULL') . ',
@@ -134,5 +134,5 @@
 		$html_title = 'Pages / ' . SITE_NAME;
 		$template = 'pages.tpl';
 	}
-		
+
 ?>

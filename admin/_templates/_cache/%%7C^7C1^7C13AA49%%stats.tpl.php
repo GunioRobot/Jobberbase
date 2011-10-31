@@ -5,42 +5,42 @@ $this->_smarty_include(array('smarty_include_tpl_file' => "header.tpl", 'smarty_
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-		
+
 		<div id="content">
 			<h3 class="page-heading">Stats</h3>
 			<div id="accordion-list">
 				<h3><?php echo $this->_tpl_vars['translations']['stats']['last_50_posts']; ?>
-:</h3> 
-				<ul> 
+:</h3>
+				<ul>
 					<li><?php echo $this->_tpl_vars['translations']['stats']['total']; ?>
 : <?php echo $this->_tpl_vars['applications']['count']; ?>
-</li> 
+</li>
 					<li><?php echo $this->_tpl_vars['translations']['stats']['average']; ?>
  / <?php echo $this->_tpl_vars['translations']['stats']['last_7_days']; ?>
 : <?php echo $this->_tpl_vars['applications']['avg']; ?>
-</li> 
+</li>
 					<li><?php echo $this->_tpl_vars['translations']['stats']['maximum']; ?>
  / <?php echo $this->_tpl_vars['translations']['stats']['last_7_days']; ?>
 : <?php echo $this->_tpl_vars['applications']['max']; ?>
-</li> 
+</li>
 				</ul>
 				<br />
 				<?php echo $this->_tpl_vars['applications']['stats']; ?>
 
 				<h3><?php echo $this->_tpl_vars['translations']['stats']['last_50_searches']; ?>
 :</h3>
-				<ul> 
+				<ul>
 					<li><?php echo $this->_tpl_vars['translations']['stats']['total']; ?>
 : <?php echo $this->_tpl_vars['keywordz']['count']; ?>
-</li> 
+</li>
 					<li><?php echo $this->_tpl_vars['translations']['stats']['average']; ?>
  / <?php echo $this->_tpl_vars['translations']['stats']['last_7_days']; ?>
 : <?php echo $this->_tpl_vars['keywordz']['avg']; ?>
-</li> 
+</li>
 					<li><?php echo $this->_tpl_vars['translations']['stats']['maximum']; ?>
  / <?php echo $this->_tpl_vars['translations']['stats']['last_7_days']; ?>
 : <?php echo $this->_tpl_vars['keywordz']['max']; ?>
-</li> 
+</li>
 				</ul>
 				<br />
 				<?php echo $this->_tpl_vars['keywordz']['stats']; ?>

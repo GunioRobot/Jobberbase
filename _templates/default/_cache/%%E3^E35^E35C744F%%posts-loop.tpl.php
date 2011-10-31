@@ -56,7 +56,7 @@ _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 		<span class="time-posted"><img src="<?php echo $this->_tpl_vars['BASE_URL']; ?>
 _templates/<?php echo $this->_tpl_vars['THEME']; ?>
 /img/clock.gif" alt="" /> <?php echo $this->_tpl_vars['job']['created_on']; ?>
-</span>			
+</span>
 	</div>
 <?php endforeach; endif; unset($_from); ?>
 <br/>

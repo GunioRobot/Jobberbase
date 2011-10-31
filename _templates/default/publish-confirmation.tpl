@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-		
+
 		<div id="content">
 			<div id="job-listings"></div><!-- #job-listings -->
 			<div class="steps">
@@ -36,7 +36,7 @@
 				<p>
 					{$translations.publish.options_info}:
 				</p>
-				<ul>	
+				<ul>
 					<li><a href="{$BASE_URL}post/{$CURRENT_ID}/{$auth}/" title="{$translations.publish.edit}">&raquo; {$translations.publish.edit}</a></li>
 					<li><a href="{$BASE_URL}deactivate/{$CURRENT_ID}/{$auth}/" title="{$translations.publish.deactivate}">&raquo; {$translations.publish.deactivate}</a></li>
 				</ul>

@@ -41,7 +41,7 @@
 	{literal}
 	<script type="text/javascript">
 		//<![CDATA[
-		
+
  		$(document).ready(function()
 		{
 		   var keywords = $('#keywords');
@@ -53,7 +53,7 @@
 				}
 			});
 
-			keywords.bind('blur', function() {  
+			keywords.bind('blur', function() {
 				if (this.value == '{/literal}{$translations.search.default}{literal}' || this.value == '')
 				{
 					this.value = '{/literal}{$translations.search.default}{literal}';
@@ -64,11 +64,11 @@
 			keywords.keyup(function(key) {
 				var searchKeywords = jQuery.trim(this.value);
 				var len = searchKeywords.length;
-				
+
 			    if (key.keyCode != 9 && len >= 3)
 				{
-					$("#indicator").show();	
-					clearTimeout(window.search_timer);	
+					$("#indicator").show();
+					clearTimeout(window.search_timer);
 					window.search_timer = setTimeout(function(){Jobber.PerformSearch('{/literal}{$BASE_URL}{literal}search/{/literal}{$current_category}{literal}|', searchKeywords)}, 800);
 			    }
 			});

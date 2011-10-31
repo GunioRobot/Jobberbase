@@ -46,7 +46,7 @@
 				return false;
 			}
 		};
-		
+
 		var mouseMove = function(e) {
 			var newTop = Math.max(minTop,Math.min(maxTop, e.pageY - pointerPosition));
 			var absTop = e.pageY - pointerPosition - minTop;
@@ -71,7 +71,7 @@
 			prevPointer = e.pageY;
 			return false;
 		};
-		
+
 		var updateCategoriesList = function() {
 			$.ajax({
 				type: 'post',
@@ -88,7 +88,7 @@
 			})
 			jobberBase.overlay.show(document.getElementById('categs-nav'));
 		};
-		
+
 		var mouseUp = function(e) {
 			$(document)
 				.unbind('mousemove', mouseMove)
@@ -125,7 +125,7 @@
 			currentEl = elOrigPrev = elOrigNext = null;
 			return false;
 		};
-		
+
 		var mouseClick = function(e) {
 			var el = $(e.target).is('img')? e.target.parentNode : e.target;
 			if ($(el).is('a.deleteCategory')) {
@@ -148,7 +148,7 @@
 									.parent()
 									.parent()
 									.fadeOut(
-										500, 
+										500,
 										function(){
 											$(this).remove()
 										}
@@ -195,11 +195,11 @@
 				return false;
 			}
 		};
-		
+
 		var inputFocus = function(e) {
 			fieldOrigValue = this.value;
 		};
-		
+
 		var inputBlur = function(e) {
 			if (this.value != fieldOrigValue) {
 				$(this)
@@ -207,11 +207,11 @@
 					.parent()
 					.find('a:last')
 						.fadeIn(500);
-						
+
 				jobberBase.messages.add('Value changed. You must save the change!');
 			}
 		};
-		
+
 		var add = function(e) {
 			this.blur();
 			if (saving === true) {
@@ -230,7 +230,7 @@
 						.fadeIn(500)
 						.get(0);
 			jobberBase.overlay.show(el);
-			
+
 			$.ajax({
 				type: 'post',
 				dataType: 'text',

@@ -5,13 +5,13 @@ $this->_smarty_include(array('smarty_include_tpl_file' => "header.tpl", 'smarty_
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-		
+
 		<div id="content">
 			<div id="job-listings">
 				<?php if ($this->_tpl_vars['jobs']): ?>
 				<div id="sort-by-type">
 				<?php echo $this->_tpl_vars['translations']['category']['display_only']; ?>
-&nbsp; 
+&nbsp;
 					<?php unset($this->_sections['tmp']);
 $this->_sections['tmp']['name'] = 'tmp';
 $this->_sections['tmp']['loop'] = is_array($_loop=$this->_tpl_vars['types']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);

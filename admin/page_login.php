@@ -3,10 +3,10 @@
 		{
 			escape($_POST);
 			$errors = array();
-			
+
 			$_SESSION['user_ip'] = $_SERVER['REMOTE_ADDR'];
 			$_SESSION['referer'] = BASE_URL;
-			
+
 			// validation
 			if ($username == '')
 			{
@@ -16,13 +16,13 @@
 			{
 				$errors['password'] = 'Please enter your password.';
 			}
-			
+
 			// no errors, go to review page
 			if (empty($errors))
 			{
 				require_once '_includes/class.Admin.php';
 				$admin = new CAdmin();
-				
+
 				if($admin->login($username, $password))
 				{
 					$_SESSION['AdminId'] = $admin->getId();
@@ -42,5 +42,5 @@
 			}
 		}
 		$template = 'login.tpl';
-		
+
 ?>
